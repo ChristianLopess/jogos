@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Jogo da Velha</title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+.letras{
+width: 100px;
+height: 100px;
+background: black;
+font-size: 80px;
+color: white;
+cursor: pointer;
+font-family: 'Fredoka One'
+
+}
+.contorno{
+background: white;
+}
+
+</style>
+<script language="JavaScript" type="text/javascript">
+
+letra = "X";
+
+function joga(tela){
+        document.getElementById(tela).innerHTML = letra;
+        if (letra == "X"){
+            letra = "O";
+        }else{
+            letra = "X";
+        }
+      }
+ 
+
+
+function verif(){
+   ca1 = document.getElementById('cela1').innerHTML;
+   ca2 = document.getElementById('cela2').innerHTML;
+   ca3 = document.getElementById('cela3').innerHTML;
+   cb1 = document.getElementById('celb1').innerHTML;
+   cb2 = document.getElementById('celb2').innerHTML;
+   cb3 = document.getElementById('celb3').innerHTML;
+   cc1 = document.getElementById('celc1').innerHTML;
+   cc2 = document.getElementById('celc2').innerHTML;
+   cc3 = document.getElementById('celc3').innerHTML;
+   if (((ca1 == "X") && (ca2 == "X") && (ca3 == "X")) || ((cb1 == "X") && (cb2 == "X") && (cb3 == "X")) || ((cc1 == "X") && (cc2 == "X") && (cc3 == "X")) || ((ca1 == "X") && (cb2 == "X") && (cc3 == "X")) || ((ca3 == "X") && (cb2 == "X") && (cc1 == "X")) || ((ca1 == "X") && (cb1 = "X") && (cc1 == "X")) || ((ca2 == "X") && (cb2 == "X") && (cc2 == "X")) || ((ca3 == "X") && (cb2 == "X") && (cc3 == "X"))){
+       alert('Jogador 1 campeão!');
+   }
+   if (((ca1 == "O") && (ca2 == "O") && (ca3 == "O")) || ((cb1 == "O") && (cb2 == "O") && (cb3 == "O")) || ((cc1 == "O") && (cc2 == "O") && (cc3 == "O")) || ((ca1 == "O") && (cb2 == "O") && (cc3 == "O")) || ((ca3 == "O") && (cb2 == "O") && (cc1 == "O")) || ((ca1 == "O") && (cb1 = "O") && (cc1 == "O")) || ((ca2 == "O") && (cb2 == "O") && (cc2 == "O")) || ((ca3 == "O") && (cb2 == "O") && (cc3 == "O"))){
+       alert('Jogador 2 campeão!');
+}
+   if (((ca1 == "O") ||(ca1 == "X")) && ((ca2 == "O")||(ca2 == "X") && (ca3 == "O")) && ((cb1 == "O") && (cb2 == "O") && (cb3 == "O")) && ((cc1 == "O") && (cc2 == "O") && (cc3 == "O"))) 
+   
+       alert('Jogador 2 campeão!');
+
+}
+
+
+
+</script>
+
+</head>
+<body>
+<table class="contorno">
+
+<tr>
+<td align="center" valign="middle" id="cela1" class="letras" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="cela2" class="letras" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="cela3" class="letras" onclick="joga(this.id);verif();"></td>
+</tr>
+
+<tr>
+<td align="center" valign="middle" id="celb1" class="letras" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="celb2" class="letras" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="celb3" class="letras" onclick="joga(this.id);verif();"></td>
+</tr>
+
+<tr>
+<td align="center" valign="middle" id="celc1" class="letras" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="celc2" class="letras" onclick="joga(this.id);verif();"></td>
+<td align="center" valign="middle" id="celc3" class="letras" onclick="joga(this.id);verif();"></td>
+</tr>
+
+</table>
+
+</body>
+</html>
