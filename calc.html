@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script type="text/javascript">
+
+	var valor1 ='';
+    var valor2 = '';
+    var operacao = ''; 
+    var tela = 0;
+    function limpe(){
+		document.getElementById('tela').value = '';
+	}
+    
+	function op(operacao){
+    	operacao = op;
+        valor1 = document.getElementById('tela');
+        limpe();
+    }
+    
+	function num(ero){
+    	
+        
+		tela = document.getElementById('tela').value += ero;
+        if (valor1 ==''){
+        valor1 = document.getElementById('tela').value;
+        }
+        else{
+        valor2 = document.getElementById('tela').value;
+        }
+        
+        
+	}
+
+	function calculo(){
+    valor2 = parseInt(tela);
+    var resul = 0;
+  
+    if (operacao =='+'){
+    	resul = valor1+valor2;
+       } 
+    else if (operacao == '-'){
+    	resul = valor1 - valor2;
+        }
+    else if (operacao=='/'){
+    	resul = valor1/valor2;
+        }
+    else if (operacao=='*'){
+    	resul = valor1*valor2;
+        }
+
+    document.getElementById('tela').value = resul;
+
+    
+    
+	}
+
+</script>
+
+<title>Page Title</title>
+</head>
+<style>
+.buttom{
+	width: 50px;
+	height: 50px;
+	background-color: orange;
+}
+
+.buttoms{
+	width: 50px;
+	height: 50px;
+	background-color: grey;
+}
+</style>
+<body>
+
+	<input type="text" id="tela"/>
+	<br>
+	<input type="submit" class="buttom" value="1" onclick="num(1)">
+	<input type="submit" class="buttom" value="2" onclick="num(2)">
+	<input type="submit" class="buttom" value="3" onclick="num(3)">
+	<input type="submit" class="buttoms" value="/" onclick="op('/')">
+	<br>
+	<input type="submit" class="buttom" value="4" onclick="num(4)">
+	<input type="submit" class="buttom" value="5" onclick="num(5)">
+	<input type="submit" class="buttom" value="6" onclick="num(6)">
+	<input type="submit" class="buttoms" value="*" onclick="op('*')">
+	<br>
+	<input type="submit" class="buttom" value="7" onclick="num(7)">
+	<input type="submit" class="buttom" value="8" onclick="num(8)">
+	<input type="submit" class="buttom" value="9" onclick="num(9)">
+	<input type="submit" class="buttoms" value="+" onclick="op('+')">
+	<br>
+	<input type="submit" class="buttom" value="0" onclick="num(0)">
+	<input type="submit" class="buttom" value="=" onclick="calculo()">
+	<input type="submit" class="buttom" value="C" onclick="limpe()">
+	<input type="submit" class="buttoms" value="-" onclick="op('-')">
+
+
+
+</body>
+</html>
